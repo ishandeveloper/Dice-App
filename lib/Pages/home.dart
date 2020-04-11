@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'package:flutter/services.dart';
 
 class DiceApp extends StatelessWidget {
   @override
@@ -21,6 +22,7 @@ class DicePage extends StatefulWidget {
 }
 
 class _DicePageState extends State<DicePage> {
+
   var lDiceNo = 5;
   var rDiceNo = 6;
 
@@ -33,6 +35,12 @@ class _DicePageState extends State<DicePage> {
 
   @override
   Widget build(BuildContext context) {
+
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
