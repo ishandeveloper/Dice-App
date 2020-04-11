@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class DiceApp extends StatelessWidget {
   @override
@@ -44,8 +45,8 @@ class _DicePageState extends State<DicePage> {
                 child: FlatButton(
                   onPressed: (){
                     setState(() {
-                      lDiceNo=1;
-                      rDiceNo=3;
+                      lDiceNo=Random().nextInt(6)+1;
+                      rDiceNo=Random().nextInt(6)+1;
                     });
                   },
                     child: Image(
