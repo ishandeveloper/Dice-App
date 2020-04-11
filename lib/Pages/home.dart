@@ -21,13 +21,18 @@ class DicePage extends StatefulWidget {
 }
 
 class _DicePageState extends State<DicePage> {
-    
-    var lDiceNo=5;
-    var rDiceNo=6;
+  var lDiceNo = 5;
+  var rDiceNo = 6;
+
+  void randomizer() {
+    setState(() {
+      lDiceNo = Random().nextInt(6) + 1;
+      rDiceNo = Random().nextInt(6) + 1;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -43,13 +48,11 @@ class _DicePageState extends State<DicePage> {
             children: <Widget>[
               Expanded(
                 child: FlatButton(
-                  onPressed: (){
-                    setState(() {
-                      lDiceNo=Random().nextInt(6)+1;
-                      rDiceNo=Random().nextInt(6)+1;
-                    });
-                  },
-                    child: Image(
+                  onPressed: () {
+                    randomizer();
+                  }
+                  ,
+                  child: Image(
                     image: AssetImage('images/dice$lDiceNo.png'),
                     width: MediaQuery.of(context).size.width * 0.7,
                   ),
@@ -57,17 +60,14 @@ class _DicePageState extends State<DicePage> {
               ),
               Expanded(
                   child: FlatButton(
-                    onPressed: (){
-                      setState(() {
-                      lDiceNo=6;
-                      rDiceNo=5;
-                      });
-                    },
-                  child: Image(
-                           image: AssetImage('images/dice$rDiceNo.png'),
-                width: MediaQuery.of(context).size.width * 0.7,
-              ),
-                  ))
+                onPressed: () {
+                  randomizer();
+                },
+                child: Image(
+                  image: AssetImage('images/dice$rDiceNo.png'),
+                  width: MediaQuery.of(context).size.width * 0.7,
+                ),
+              ))
             ],
           ),
         ),
