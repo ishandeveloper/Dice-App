@@ -14,12 +14,19 @@ class DiceApp extends StatelessWidget {
   }
 }
 
-class DicePage extends StatelessWidget {
+class DicePage extends StatefulWidget {
+  @override
+  _DicePageState createState() => _DicePageState();
+}
+
+class _DicePageState extends State<DicePage> {
+    
+    var lDiceNo=5;
+    var rDiceNo=6;
+
   @override
   Widget build(BuildContext context) {
 
-    var lDiceNo=5;
-    var rDiceNo=6;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -36,7 +43,10 @@ class DicePage extends StatelessWidget {
               Expanded(
                 child: FlatButton(
                   onPressed: (){
-
+                    setState(() {
+                      lDiceNo=1;
+                      rDiceNo=3;
+                    });
                   },
                     child: Image(
                     image: AssetImage('images/dice$lDiceNo.png'),
@@ -47,7 +57,10 @@ class DicePage extends StatelessWidget {
               Expanded(
                   child: FlatButton(
                     onPressed: (){
-
+                      setState(() {
+                      lDiceNo=6;
+                      rDiceNo=5;
+                      });
                     },
                   child: Image(
                            image: AssetImage('images/dice$rDiceNo.png'),
