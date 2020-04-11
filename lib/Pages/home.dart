@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:flutter/services.dart';
 
+import 'about.dart';
+
 class DiceApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -51,7 +53,7 @@ class _DicePageState extends State<DicePage> {
             child: GestureDetector(
               child: Icon(Icons.info),
               onTap: (){
-                
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>AboutPage()));
               },
             ),
           )
