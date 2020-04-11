@@ -17,6 +17,9 @@ class DiceApp extends StatelessWidget {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    var lDiceNo=5;
+    var RDiceNo=6;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -36,7 +39,7 @@ class DicePage extends StatelessWidget {
 
                   },
                     child: Image(
-                    image: AssetImage('images/dice1.png'),
+                    image: AssetImage('images/dice$lDiceNo.png'),
                     width: MediaQuery.of(context).size.width * 0.7,
                   ),
                 ),
@@ -47,7 +50,7 @@ class DicePage extends StatelessWidget {
 
                     },
                   child: Image(
-                           image: AssetImage('images/dice1.png'),
+                           image: AssetImage('images/dice$rDiceNo.png'),
                 width: MediaQuery.of(context).size.width * 0.7,
               ),
                   ))
