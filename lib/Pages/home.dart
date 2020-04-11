@@ -19,7 +19,7 @@ class DicePage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     var lDiceNo=5;
-    var RDiceNo=6;
+    var rDiceNo=6;
     return Scaffold(
       appBar: AppBar(
         title: Text(
